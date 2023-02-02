@@ -9,11 +9,17 @@ public class MenuController : MonoBehaviour
     public GameObject internetError;
 
     public GameObject loadingPanel;
+    private BannerView banner;
 
+#if UNITY_IOS
+    private string admob_app_id="ca-app-pub-4962234576866611~4574307279";
+
+    private string bannerId="ca-app-pub-4962234576866611/5399485546";
+#else
     private string admob_app_id="ca-app-pub-4962234576866611~2099524194";
 
-    private BannerView banner;
     private string bannerId="ca-app-pub-4962234576866611/2077814212";
+#endif
 
     void Start(){
         RequestConfiguration requestConfiguration =

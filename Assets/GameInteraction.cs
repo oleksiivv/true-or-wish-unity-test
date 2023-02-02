@@ -21,16 +21,24 @@ public class GameInteraction : MonoBehaviour
     public ParticleSystem showEffect;
 
     public Animator chooseOptionPanel;
+    private InterstitialAd intersitional;
+    private BannerView banner;
 
+#if UNITY_IOS
+    private string admob_app_id="ca-app-pub-4962234576866611~4574307279";
+    private string unity_app_id="4236416";
+
+    private string intersitionalId="ca-app-pub-4962234576866611/9147158862";
+
+    private string bannerId="ca-app-pub-4962234576866611/5399485546";
+#else
     private string admob_app_id="ca-app-pub-4962234576866611~2099524194";
     private string unity_app_id="4236417";
 
-    private InterstitialAd intersitional;
     private string intersitionalId="ca-app-pub-4962234576866611/9729961572";
 
-    private BannerView banner;
     private string bannerId="ca-app-pub-4962234576866611/2077814212";
-
+#endif
 
     void Start(){
         switch(CategoryController.currentCategory){
